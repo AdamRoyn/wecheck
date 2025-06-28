@@ -12,7 +12,7 @@ import {
 interface ChartProp {
   xKey: string;
   lKey: string;
-  value: { [key: string]: any }[];
+  value: { [key: string]: string | number }[];
 }
 
 export function Chart({xKey, lKey, value}: ChartProp) {

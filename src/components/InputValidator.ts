@@ -1,7 +1,8 @@
 import React from "react";
 // import { redirect, RedirectType } from 'next/navigation';
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 let fully = false;
+type AppRouterInstance = ReturnType<typeof useRouter>;
 
 export function checkInput(event: React.ChangeEvent<HTMLInputElement>): void {
   const input = event.target;
@@ -23,7 +24,7 @@ export function checkInput(event: React.ChangeEvent<HTMLInputElement>): void {
   }
 }
 
-export function sendQuery(router : any, id = "lokasion"): void {
+export function sendQuery(router : AppRouterInstance, id = "lokasion"): void {
   const input = document.getElementById(id) as HTMLInputElement | null;
   
   if(!input) return;

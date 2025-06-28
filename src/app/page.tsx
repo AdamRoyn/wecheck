@@ -6,10 +6,10 @@ import { checkInput, sendQuery } from "../components/InputValidator";
 
 export default function Home() {
   const router = useRouter()
-  const [tempSwitch, setTemp] = React.useState("Celcius");
+  // const [tempSwitch, setTemp] = React.useState("Celcius");
 
-  const setC = () => setTemp("Celcius");
-  const setF = () => setTemp("Fahrenheit");
+  // const setC = () => setTemp("Celcius");
+  // const setF = () => setTemp("Fahrenheit");
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#898AC4]">
