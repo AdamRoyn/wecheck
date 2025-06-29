@@ -24,10 +24,12 @@ export function checkInput(event: React.ChangeEvent<HTMLInputElement>): void {
   }
 }
 
-export function sendQuery(router : AppRouterInstance, id = "lokasion"): void {
+export function sendQuery(router : AppRouterInstance, id = "lokasion", btn = "search-button"): void {
   const input = document.getElementById(id) as HTMLInputElement | null;
+  const go = document.getElementById(btn) as HTMLInputElement | null;
 
   if(!input) return;
+  if(!go) return;
 
   if(!input.value) {
     input.classList.remove("outline-[#898AC4]");
@@ -37,9 +39,11 @@ export function sendQuery(router : AppRouterInstance, id = "lokasion"): void {
   
   if(fully) {
     // alert(`Input: ${input.value}`);
+    go.classList.add("cursor-progress");
     router.push(`/check?location=${encodeURIComponent(input.value)}`);
   } else {
     input.classList.remove("outline-[#898AC4]");
+    go.classList.remove("cursor-progress");
     input.classList.add("outline-red-500", "outline-2");
   }
 }

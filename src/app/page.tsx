@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { checkInput, sendQuery } from "../components/InputValidator";
+import { checkInput, sendQuery } from "@/components/InputValidator";
 
 export default function Home() {
   const router = useRouter()

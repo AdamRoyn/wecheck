@@ -1,12 +1,15 @@
 "use client";
+
 import React from "react";
-import { useSearchParams } from "next/navigation";
-import { Card, Load } from "../../components/checkFunc";
+import { useSearchParams, useRouter } from "next/navigation";
+import { Card, Load } from "@/components/checkFunc";
 import { Chart } from "@/components/chartHour";
 import ToolTip from "@/components/ToolTip";
+import Link from "next/link";
 
 export default function SearchPage() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const location = searchParams.get("location") || "";
   const [weather, setWeather] = React.useState<WeatherData | null>(null);
   const [error, setError] = React.useState("");
@@ -190,11 +193,11 @@ export default function SearchPage() {
                   <p className="font-light">32°</p>
                 </div>
               </div>
-
             </div>
-            <button name="Search Another Location" className="text-md xs:text-md sm:text-xs md:text-sm bg-[#898AC4] rounded-md text-[#FFF2E0] p-2 mt-3 w-full outline-2 outline-[#C0C9EE] hover:bg-[#C0C9EE] hover:outline-[#898AC4] hover:text-[#898AC4] active:scale-85 duration-100 cursor-pointer">Search Another Location</button>
-          </div>  
+            <button name="Search Another Location" className="text-md xs:text-md sm:text-xs md:text-sm bg-[#898AC4] rounded-md text-[#FFF2E0] p-2 mt-3 w-full outline-2 outline-[#C0C9EE] hover:bg-[#C0C9EE] hover:outline-[#898AC4] hover:text-[#898AC4] active:scale-85 duration-100 cursor-pointer" onClick={() => router.push("/")}>Search Another Location</button>
+          </div>
         </div>
+        <p className="mt-2 text-sm text-[#FFF2E0]">Data provided by <Link href="https://github.com/chubin/wttr.in">wttr.in</Link></p>
       </div>
     </div>
   );
