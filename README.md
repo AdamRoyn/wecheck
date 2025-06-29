@@ -19,7 +19,7 @@ A clean, responsive weather dashboard built with **Next.js** and **Tailwind CSS*
 
 ## 📝 To-Do
 - [ ] Add More Information On Today Card
-- [ ] More Responsive
+- [x] More Responsive
 
 ## ⚠️ Note
 This is my first project, if there are any mistakes or suggestions, feel free to let me know!
