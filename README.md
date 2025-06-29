@@ -1,4 +1,5 @@
 # 🌤️ WeCheck Dashboard App
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/AdamRoyn/wecheck)
 
 A clean, responsive weather dashboard built with **Next.js** and **Tailwind CSS**, fetching real-time data from the [wttr.in](https://wttr.in) API. Displays current weather, 24-hour forecast charts, and daily highlights.
 
