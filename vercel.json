@@ -1,0 +1,7 @@
+{
+  "framework": {
+    "name": "nextjs",
+    "version": 15
+  },
+  "srcDir": "src"
+}
