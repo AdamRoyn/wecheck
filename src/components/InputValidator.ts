@@ -26,8 +26,14 @@ export function checkInput(event: React.ChangeEvent<HTMLInputElement>): void {
 
 export function sendQuery(router : AppRouterInstance, id = "lokasion"): void {
   const input = document.getElementById(id) as HTMLInputElement | null;
-  
+
   if(!input) return;
+
+  if(!input.value) {
+    input.classList.remove("outline-[#898AC4]");
+    input.classList.add("outline-red-500", "outline-2");
+    return;
+  }
   
   if(fully) {
     // alert(`Input: ${input.value}`);

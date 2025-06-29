@@ -40,7 +40,7 @@ export default function SearchPage() {
   };
 
   React.useEffect(() => {
-    if (!location) return;
+    if (!location) return setError("No Location Input..");
 
     const fetchWeather = async () => {
       setError("");
