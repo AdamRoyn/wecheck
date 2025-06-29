@@ -16,5 +16,9 @@ A clean, responsive weather dashboard built with **Next.js** and **Tailwind CSS*
 - **Charting**: [Recharts](https://recharts.org/)
 - **API**: [wttr.in](https://wttr.in/)
 
+## 📝 To-Do
+- [ ] Add More Information On Today Card
+- [ ] More Responsive
+
 ## ⚠️ Note
 This is my first project, if there are any mistakes or suggestions, feel free to let me know!
