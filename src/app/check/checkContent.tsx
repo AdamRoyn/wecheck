@@ -197,7 +197,7 @@ export default function SearchPage() {
             <button name="Search Another Location" className="text-md xs:text-md sm:text-xs md:text-sm bg-[#898AC4] rounded-md text-[#FFF2E0] p-2 mt-3 w-full outline-2 outline-[#C0C9EE] hover:bg-[#C0C9EE] hover:outline-[#898AC4] hover:text-[#898AC4] active:scale-85 duration-100 cursor-pointer" onClick={() => router.push("/")}>Search Another Location</button>
           </div>
         </div>
-        <p className="mt-2 text-sm text-[#FFF2E0]">Data provided by <Link href="https://github.com/chubin/wttr.in">wttr.in</Link></p>
+        <p className="mt-3 text-xs text-[#FFF2E0]">in celcius format. Data provided by <Link href="https://github.com/chubin/wttr.in">wttr.in</Link></p>
       </div>
     </div>
   );
