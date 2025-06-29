@@ -1,6 +1,7 @@
 import ToolTip from "./ToolTip";
 
 interface CardProps {
+  className?: string;
   value: string;
   tooltip: string;
   svg: React.ReactNode;
@@ -11,9 +12,9 @@ interface LoadProps {
   active: boolean;
 }
 
-export function Card({ value, tooltip = "n/a", svg }: CardProps) {
+export function Card({ className, value, tooltip = "n/a", svg }: CardProps) {
   return (
-    <div className="flex flex-1 items-center bg-[#898AC4] rounded-xl text-[#FFF2E0] p-2 max-w-1/2 min-w-full">
+    <div className={`flex flex-1 items-center bg-[#898AC4] rounded-xl text-[#FFF2E0] p-2 max-w-1/2 min-w-full ${className}`}>
       <ToolTip text={tooltip}>
         <div className="bg-[#A2AADB] text-[#898AC4] rounded-md">{svg}</div>
       </ToolTip>

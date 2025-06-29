@@ -86,51 +86,51 @@ export default function SearchPage() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-15 gap-6 mt-3">
-          <div className="col-span-6 sm:col-span-4 *:mt-3">
+        <div className="grid sm:grid-cols-15 gap-3 sm:gap-6 mt-3">
+          <div className="col-span-6 xs:col-span-3 sm:col-span-4 *:mt-3">
             {/* Card */}
-            <Card svg={
-                <svg style={{ transform: `rotate(${weather?.current_condition?.[0]?.winddirDegree ?? 0}deg)`,}} xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M7.03 9.97h4v8.92l2.01.03V9.97h3.99l-5-5Z"/>
-                </svg>
-              }
-              value={weather?.current_condition?.[0]?.winddir16Point ?? "N/A"}
-              tooltip="Wind Direction (Top Is North)"
-            />
-            <Card svg={
-              <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
-                  <g fill="none" fillRule="evenodd">
-                    <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
-                    <path fill="currentColor" d="M10.5 4a1.5 1.5 0 0 0-1.47 1.199A1 1 0 1 1 7.07 4.8A3.5 3.5 0 1 1 10.5 9H5a1 1 0 0 1 0-2h5.5a1.5 1.5 0 0 0 0-3m8 4a1.5 1.5 0 0 0-1.47 1.199a1 1 0 1 1-1.96-.398A3.5 3.5 0 1 1 18.5 13H3a1 1 0 1 1 0-2h15.5a1.5 1.5 0 0 0 0-3m-5.47 10.801A1.5 1.5 0 1 0 14.5 17H8a1 1 0 1 1 0-2h6.5a3.5 3.5 0 1 1-3.43 4.199a1 1 0 1 1 1.96-.398"/>
-                  </g>
-                </svg>
-              }
-              value={weather?.current_condition?.[0]?.windspeedKmph? `${weather.current_condition[0].windspeedKmph} Km/h`: "N/A"
-              }
-              tooltip="Wind Speed"
-            />
-            <Card
-              svg={
+            <div className="grid grid-cols-2 gap-3 xs:grid-cols-1">
+              <Card svg={
+                  <svg style={{ transform: `rotate(${weather?.current_condition?.[0]?.winddirDegree ?? 0}deg)`,}} xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M7.03 9.97h4v8.92l2.01.03V9.97h3.99l-5-5Z"/>
+                  </svg>
+                }
+                value={weather?.current_condition?.[0]?.winddir16Point ?? "N/A"}
+                tooltip="Wind Direction (Top Is North)"
+              />
+              <Card svg={
                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M21.86 12.5A4.3 4.3 0 0 0 19 11c0-1.95-.68-3.6-2.04-4.96S13.95 4 12 4c-1.58 0-3 .47-4.25 1.43s-2.08 2.19-2.5 3.72c-1.25.28-2.29.93-3.08 1.95S1 13.28 1 14.58c0 1.51.54 2.8 1.61 3.85C3.69 19.5 5 20 6.5 20h12c1.25 0 2.31-.44 3.19-1.31c.87-.88 1.31-1.94 1.31-3.19q0-1.725-1.14-3M9.45 9.03c.78 0 1.42.64 1.42 1.42s-.64 1.42-1.42 1.42s-1.42-.64-1.42-1.42s.64-1.42 1.42-1.42m5.1 7.94c-.78 0-1.42-.64-1.42-1.42s.64-1.42 1.42-1.42s1.42.64 1.42 1.42s-.64 1.42-1.42 1.42M9.2 17L8 15.8L14.8 9l1.2 1.2z" />
-                </svg>
-              }
-              value={ weather?.current_condition?.[0]?.humidity? `${weather.current_condition[0].humidity}%`: "N/A"}
-              tooltip="Humidity"
-            />
-            <Card
-              svg={
-                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 512 512">
-                  <path fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="32" d="M400 320c0 88.37-55.63 144-144 144s-144-55.63-144-144c0-94.83 103.23-222.85 134.89-259.88a12 12 0 0 1 18.23 0C296.77 97.15 400 225.17 400 320Z" />
-                  <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="M344 328a72 72 0 0 1-72 72"/>
-                </svg>
-              }
-              value={weather?.current_condition?.[0]?.precipMM? `${weather.current_condition[0].precipMM} mm`: "N/A"}
-              tooltip="Chance Of Rain"
-            />
+                    <g fill="none" fillRule="evenodd">
+                      <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                      <path fill="currentColor" d="M10.5 4a1.5 1.5 0 0 0-1.47 1.199A1 1 0 1 1 7.07 4.8A3.5 3.5 0 1 1 10.5 9H5a1 1 0 0 1 0-2h5.5a1.5 1.5 0 0 0 0-3m8 4a1.5 1.5 0 0 0-1.47 1.199a1 1 0 1 1-1.96-.398A3.5 3.5 0 1 1 18.5 13H3a1 1 0 1 1 0-2h15.5a1.5 1.5 0 0 0 0-3m-5.47 10.801A1.5 1.5 0 1 0 14.5 17H8a1 1 0 1 1 0-2h6.5a3.5 3.5 0 1 1-3.43 4.199a1 1 0 1 1 1.96-.398"/>
+                    </g>
+                  </svg>
+                }
+                value={weather?.current_condition?.[0]?.windspeedKmph? `${weather.current_condition[0].windspeedKmph} Km/h`: "N/A"
+                }
+                tooltip="Wind Speed"
+              />
+              <Card svg={
+                  <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M21.86 12.5A4.3 4.3 0 0 0 19 11c0-1.95-.68-3.6-2.04-4.96S13.95 4 12 4c-1.58 0-3 .47-4.25 1.43s-2.08 2.19-2.5 3.72c-1.25.28-2.29.93-3.08 1.95S1 13.28 1 14.58c0 1.51.54 2.8 1.61 3.85C3.69 19.5 5 20 6.5 20h12c1.25 0 2.31-.44 3.19-1.31c.87-.88 1.31-1.94 1.31-3.19q0-1.725-1.14-3M9.45 9.03c.78 0 1.42.64 1.42 1.42s-.64 1.42-1.42 1.42s-1.42-.64-1.42-1.42s.64-1.42 1.42-1.42m5.1 7.94c-.78 0-1.42-.64-1.42-1.42s.64-1.42 1.42-1.42s1.42.64 1.42 1.42s-.64 1.42-1.42 1.42M9.2 17L8 15.8L14.8 9l1.2 1.2z" />
+                  </svg>
+                }
+                value={ weather?.current_condition?.[0]?.humidity? `${weather.current_condition[0].humidity}%`: "N/A"}
+                tooltip="Humidity"
+              />
+              <Card svg={
+                  <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 512 512">
+                    <path fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="32" d="M400 320c0 88.37-55.63 144-144 144s-144-55.63-144-144c0-94.83 103.23-222.85 134.89-259.88a12 12 0 0 1 18.23 0C296.77 97.15 400 225.17 400 320Z" />
+                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="M344 328a72 72 0 0 1-72 72"/>
+                  </svg>
+                }
+                value={weather?.current_condition?.[0]?.precipMM? `${weather.current_condition[0].precipMM} mm`: "N/A"}
+                tooltip="Chance Of Rain"
+              />
+            </div>
           </div>
 
-          <div className="col-span-6 sm:mt-2.5">
+          <div className="col-span-6 xs:col-span-3 sm:col-span-6 xs:mt-2.5">
             {/* 24h temp */}
             <div className="bg-[#898AC4] rounded-xl text-[#FFF2E0] max-w-1/2 min-w-full pt-2 pb-1/4 px-2">
               <p className="font-bold text-sm px-2">24 Hour Temperature</p>
@@ -138,13 +138,13 @@ export default function SearchPage() {
             </div>
           </div>
 
-          <div className="col-span-6 sm:col-span-5 sm:mt-3">
+          <div className="col-span-6 sm:col-span-5 xs:mt-2.5">
             {/* today */}
             <div className="flex flex-col bg-[#898AC4] rounded-xl text-[#FFF2E0] max-w-1/2 min-w-full p-2">
-              <p id="temp" className="text-xl font-semibold text-center">
+              <p id="temp" className="xs:text-3xl font-semibold text-center translate-x-1">
                 {weather?.current_condition?.[0]?.temp_C? `${weather.current_condition[0].temp_C}°`: "N/A"}
               </p>
-              <p id="locate" className="text-md font-medium text-center -translate-y-1">
+              <p id="locate" className="xs:text-xl font-medium text-center -translate-y-1">
                 {weather?.nearest_area[0].areaName[0].value? `${weather.nearest_area[0].areaName[0].value}`: "Unknown"}
               </p>
               <div className="flex gap-2 justify-center text-2xl font-normal text-center">
@@ -179,18 +179,20 @@ export default function SearchPage() {
 
               <div className="flex flex-col justify-center items-center">
                 {/* Today Condition */}
-                <div className="flex justify-between items-center gap-2 bg-[#A2AADB] rounded-md mt-2 w-full px-2">
-                  <p className="text-sm font-light">Morning</p>
-                  <p className="text-right text-sm font-light">Cloudy</p>
-                  <p className="text-sm font-light">32°</p>
+                <div className="flex xs:text-md sm:text-xs md:text-sm  justify-between items-center gap-2 bg-[#A2AADB] rounded-md mt-2 w-full px-2">
+                  <p className="font-light">Morning</p>
+                  <p className="text-right font-light">Cloudy</p>
+                  <p className="font-light">32°</p>
                 </div>
-                <div className="flex justify-between items-center gap-2 bg-[#A2AADB] rounded-md mt-2 w-full px-2">
-                  <p className="text-sm font-light">Morning</p>
-                  <p className="text-right text-sm font-light">Cloudy</p>
-                  <p className="text-sm font-light">32°</p>
+                <div className="flex xs:text-md sm:text-xs md:text-sm justify-between items-center gap-2 bg-[#A2AADB] rounded-md mt-2 w-full px-2">
+                  <p className="font-light">Morning</p>
+                  <p className="text-right font-light">Cloudy</p>
+                  <p className="font-light">32°</p>
                 </div>
               </div>
+
             </div>
+            <button name="Search Another Location" className="text-md xs:text-md sm:text-xs md:text-sm bg-[#898AC4] rounded-md text-[#FFF2E0] p-2 mt-3 w-full outline-2 outline-[#C0C9EE] hover:bg-[#C0C9EE] hover:outline-[#898AC4] hover:text-[#898AC4] active:scale-85 duration-100 cursor-pointer">Search Another Location</button>
           </div>  
         </div>
       </div>
