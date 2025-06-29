@@ -18,7 +18,7 @@ A clean, responsive weather dashboard built with **Next.js** and **Tailwind CSS*
 - **API**: [wttr.in](https://wttr.in/)
 
 ## 📝 To-Do
-- [ ] Add More Information On Today Card
+- [x] ~Add More Information On Today Card~
 - [x] More Responsive
 
 ## ⚠️ Note
