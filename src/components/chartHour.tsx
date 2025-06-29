@@ -17,7 +17,7 @@ interface ChartProp {
 
 export function Chart({xKey, lKey, value}: ChartProp) {
   return (
-    <ResponsiveContainer height={225}>
+    <ResponsiveContainer className="" height={250}>
       <LineChart data={value}>
         <CartesianGrid strokeDasharray="8 8" stroke="#fff2e0" opacity={0.2} />
         <XAxis dataKey={xKey} stroke="#FFF2E0" />
