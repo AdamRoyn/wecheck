@@ -74,11 +74,11 @@ export default function SearchPage() {
           <Load value="No weather data, Just look outside (try again)" active />
         )}
 
-        <div className="grid grid-cols-4 text-[#FFF2E0]">
+        <div className="grid grid-cols-4 text-[#FFF2E0] mb-6 sm:mb-0">
           <p className="col-span-2 font-bold text-2xl left-1">
             {weather?.current_condition?.[0]?.weatherDesc[0].value? `${weather.current_condition[0].weatherDesc[0].value}` : "No-Data"}
           </p>
-          <p className="col-span-2 font-bold text-right text-wrap text-sm truncate">
+          <p className="col-span-2 font-bold text-right text-wrap text-sm truncate mt-1">
             {weather?.nearest_area?.[0]?.areaName[0].value? `${weather?.nearest_area?.[0]?.areaName[0].value}, ${weather.nearest_area?.[0]?.region[0].value}`: "N/A"}
           </p>
           <p className="absolute col-span-1 font-regular text-md translate-y-7">
@@ -86,11 +86,7 @@ export default function SearchPage() {
           </p>
         </div>
 
-        {/* <div className="bg-[#898AC4] rounded-xl text-center text-[#FFF2E0] font-medium text-md w-auto max-w-3/4 mt-3">
-              <p>Possible Rain At 03:00, take your umbrella</p>
-            </div> */}
-
-        <div className="grid grid-cols-15 gap-6 mt-3">
+        <div className="grid sm:grid-cols-15 gap-6 mt-3">
           <div className="col-span-6 sm:col-span-4 *:mt-3">
             {/* Card */}
             <Card svg={
@@ -134,7 +130,7 @@ export default function SearchPage() {
             />
           </div>
 
-          <div className="col-span-9 sm:col-span-6 mt-3">
+          <div className="col-span-6 sm:mt-2.5">
             {/* 24h temp */}
             <div className="bg-[#898AC4] rounded-xl text-[#FFF2E0] max-w-1/2 min-w-full pt-2 pb-1/4 px-2">
               <p className="font-bold text-sm px-2">24 Hour Temperature</p>
@@ -142,7 +138,7 @@ export default function SearchPage() {
             </div>
           </div>
 
-          <div className="col-span-full sm:col-span-5 mt-3">
+          <div className="col-span-6 sm:col-span-5 sm:mt-3">
             {/* today */}
             <div className="flex flex-col bg-[#898AC4] rounded-xl text-[#FFF2E0] max-w-1/2 min-w-full p-2">
               <p id="temp" className="text-xl font-semibold text-center">
