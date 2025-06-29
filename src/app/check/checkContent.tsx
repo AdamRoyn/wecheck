@@ -82,8 +82,7 @@ export default function SearchPage() {
             {weather?.nearest_area?.[0]?.areaName[0].value? `${weather?.nearest_area?.[0]?.areaName[0].value}, ${weather.nearest_area?.[0]?.region[0].value}`: "N/A"}
           </p>
           <p className="absolute col-span-1 font-regular text-md translate-y-7">
-            Feels Like
-            {weather?.current_condition?.[0]?.FeelsLikeC? `${weather.current_condition[0].FeelsLikeC}°`: "N/A"}
+            Feels Like {weather?.current_condition?.[0]?.FeelsLikeC? `${weather.current_condition[0].FeelsLikeC}°`: "N/A"}
           </p>
         </div>
 
