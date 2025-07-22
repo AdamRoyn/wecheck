@@ -31,7 +31,7 @@ export default function Home() {
           </div>
         </div> */}
         
-        <footer className="mt-3 text-center text-sm font-light">Created By <Link className="font-bold" href="https://github.com/AdamRoyn">AdamRoyn</Link> (first project, yay!)</footer>
+        <footer className="mt-3 text-center text-sm font-light">Created By <Link className="font-bold" href="https://admryn.vercel.app/">AdamRoyn</Link> (first project, yay!)</footer>
       </div>
     </div>
   );
